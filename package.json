@@ -1,0 +1,38 @@
+{
+  "name": "pi-agents-redux-saga-extension",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "agent-server": "node server.cjs",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "test": "node test/dispatch.test.mjs && node test/saga-semantics.test.mjs && node test/naming.test.mjs && node test/conversation.test.mjs && node test/desk-tools.test.mjs && node test/demo-bridge.test.mjs && node test/render-states.mjs && node test/bridge.test.mjs",
+    "preview": "vite preview",
+    "preflight": "node scripts/preflight.mjs",
+    "check:extension": "node scripts/check-extension-loaded.mjs",
+    "demo": "node scripts/demo-bridge.cjs",
+    "dev:lan": "PI_LAN=1 vite",
+    "agent-server:lan": "PI_LAN=1 BRIDGE_HOST=0.0.0.0 npm run agent-server",
+    "demo:lan": "PI_LAN=1 npm run demo",
+    "demo:trio": "PI_SQUAD=trio npm run demo"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.12.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-redux": "^9.3.0",
+    "redux-saga": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "typebox": "^1.3.34",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
